@@ -49,7 +49,15 @@ public class Rational implements IRational {
      */
     @Override
     public Rational construct(int numerator, int denominator) throws IllegalArgumentException {
-        throw new NotImplementedException();
+        switch(denominator){
+            case 0:
+                throw new NotImplimentedException();
+                break;
+            default:
+                int rationalValue;
+                rationalValue = numerator/denominator;
+                return rationalValue;
+        }
     }
 
     /**
