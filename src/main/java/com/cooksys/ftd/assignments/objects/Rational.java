@@ -33,7 +33,7 @@ public class Rational implements IRational {
      */
     @Override
     public int getDenominator() {
-        throw new NotImplementedException();
+        return denominator;
     }
 
     /**
