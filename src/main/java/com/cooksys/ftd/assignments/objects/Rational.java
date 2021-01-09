@@ -68,7 +68,13 @@ public class Rational implements IRational {
      */
     @Override
     public boolean equals(Object obj) {
-        throw new NotImplementedException();
+        switch(obj){
+            case obj == numerator/denominator:
+                return true;
+            break;
+            default:
+                return false;
+        }
     }
 
     /**
