@@ -86,6 +86,7 @@ public class Rational implements IRational {
      */
     @Override
     public String toString() {
-        throw new NotImplementedException();
+        String rationalString = String.valueOf(numerator/denominator);
+        return rationalString;
     }
 }
