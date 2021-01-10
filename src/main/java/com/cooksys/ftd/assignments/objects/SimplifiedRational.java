@@ -38,8 +38,29 @@ public class SimplifiedRational implements IRational {
      * @return a two element array representation of the simplified numerator and denominator
      * @throws IllegalArgumentException if the given denominator is 0
      */
-    public static int[] simplify(int numerator, int denominator) throws IllegalArgumentException {
-        throw new NotImplementedException();
+    public static int[] simplify(int numerator, int denominator) throws MyException {
+        switch(denominator){
+            case 0:
+                throw new MyException();
+            default:
+                int divisor = 0;
+
+                for(int i =numerator; i>= 1; i--){
+                    if(numerator % 1 == 0 && denominator % i == 0){
+                        divisor = i;
+                        break;
+                    }
+                }
+                switch(divisor){
+                    case 0:
+                        int[] simpArray = new int[] {numerator, denominator};
+                        return simpArray;
+                    break;
+                    default:
+                        numerator = numerator/divisor;
+                        denominator = denominator/divisor;
+                }
+        }
     }
 
     /**
