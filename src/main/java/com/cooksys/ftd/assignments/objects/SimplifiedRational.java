@@ -11,8 +11,18 @@ public class SimplifiedRational implements IRational {
      * @return the greatest common denominator, or shared factor, of `a` and `b`
      * @throws IllegalArgumentException if a <= 0 or b < 0
      */
-    public static int gcd(int a, int b) throws IllegalArgumentException {
-        throw new NotImplementedException();
+    public static int gcd(int a, int b) throws IllegalArgument {
+        if(a<=0 || b<0){
+            throw new NotImplementedException();
+        }else{
+            switch(a){
+                case 0:
+                    return b;
+                default:
+                    return gcd(b%a, a);
+            }
+        }
+
     }
 
     /**
