@@ -38,10 +38,10 @@ public class SimplifiedRational implements IRational {
      * @return a two element array representation of the simplified numerator and denominator
      * @throws IllegalArgumentException if the given denominator is 0
      */
-    public static int[] simplify(int numerator, int denominator) throws MyException {
+    public static int[] simplify(int numerator, int denominator) throws IllegalARgument {
         switch(denominator){
             case 0:
-                throw new MyException();
+                throw new NotImplementedException();
             default:
                 int divisor = 0;
 
@@ -76,7 +76,10 @@ public class SimplifiedRational implements IRational {
      * @throws IllegalArgumentException if the given denominator is 0
      */
     public SimplifiedRational(int numerator, int denominator) throws IllegalArgumentException {
-        throw new NotImplementedException();
+        switch(denominator){
+            case 0:
+                throw new MyException();
+        }
     }
 
     /**
